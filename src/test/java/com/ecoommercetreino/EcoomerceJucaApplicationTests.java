@@ -1,4 +1,4 @@
-package com.ecoommercetreino.ecoomercetreino;
+package com.ecoommercetreino;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

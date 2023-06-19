@@ -1,4 +1,4 @@
-package com.ecoommercetreino.ecoomercetreino;
+package com.ecoommercetreino;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
