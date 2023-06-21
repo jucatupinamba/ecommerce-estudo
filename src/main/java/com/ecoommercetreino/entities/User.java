@@ -14,16 +14,16 @@ public class User implements Serializable {
     private Long id;
     private String name;
     private String email;
-    private String prone;
+    private String phone;
     private String password;
 
     public User () {}
 
-    public User(Long id, String name, String email, String prone, String password) {
+    public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.prone = prone;
+        this.phone = phone;
         this.password = password;
     }
 
@@ -51,12 +51,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getProne() {
-        return prone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setProne(String prone) {
-        this.prone = prone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getPassword() {
