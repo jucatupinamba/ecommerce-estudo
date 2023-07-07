@@ -2,6 +2,7 @@ package com.ecoommercetreino.entities;
 
 import com.ecoommercetreino.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -82,6 +83,14 @@ public class Order implements Serializable {
 
     public Set<OrderItem> getItems(){
         return items;
+    }
+
+    public Double getTotal(){
+        double sum = 0.0;
+        for(OrderItem x : items){
+            sum += x.getSubTotal();
+        }
+        return sum;
     }
 
     @Override
