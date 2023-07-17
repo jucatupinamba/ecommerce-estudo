@@ -27,12 +27,8 @@ public class CategoryService {
     }
 
     public Category findById (Long id) {
-        try {
             Optional<Category> obj = categoryRepository.findById(id);
-            return obj.get();
-        }catch(NoSuchElementException e){
-            throw new ResourceNotFoundException(id);
-        }
+            return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
     public Category insert(Category obj) {
         return categoryRepository.save(obj);

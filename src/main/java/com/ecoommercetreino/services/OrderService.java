@@ -27,12 +27,8 @@ public class OrderService {
     }
 
     public Order findById (Long id) {
-        try {
             Optional<Order> obj = orderRepository.findById(id);
-            return obj.get();
-        }catch(NoSuchElementException e){
-            throw new ResourceNotFoundException(id);
-        }
+            return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
     public Order insert(Order obj) {
         return orderRepository.save(obj);
